@@ -1,265 +1,304 @@
-index.html
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Alton Skyline Stay</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---navy:#050816;
---gold:#d4af37;
+--navy:#030712;
+--gold:#d4a646;
+--goldSoft:#f7cf73;
 --white:#ffffff;
---soft:#bfc3cf;
+--card:#081120;
+--soft:#b9c0cf;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#030712;
+background:var(--navy);
+font-family:'Poppins',sans-serif;
 color:white;
 overflow-x:hidden;
 }
 
-img{
-width:100%;
-display:block;
-}
+/* HERO */
 
 .hero{
 height:100vh;
 position:relative;
-background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200') center/cover;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400') center/cover;
 display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
+align-items:flex-end;
+padding:30px;
 }
 
 .overlay{
 position:absolute;
 inset:0;
 background:linear-gradient(to bottom,
-rgba(1,5,18,.85),
-rgba(1,5,18,.65),
-rgba(1,5,18,.95));
+rgba(2,8,23,.45),
+rgba(2,8,23,.75),
+rgba(2,8,23,.96));
 }
 
 .topbar{
 position:absolute;
-top:0;
-left:0;
-right:0;
-padding:18px;
+top:20px;
+left:20px;
+right:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-z-index:5;
+z-index:3;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
+width:110px;
 }
 
-.logo img{
-width:42px;
-height:42px;
-border-radius:10px;
-}
-
-.logo span{
-font-family:'Cinzel',serif;
-font-size:18px;
-color:var(--gold);
-font-weight:700;
-}
-
-.admin-btn{
-background:rgba(255,255,255,.1);
-border:1px solid rgba(255,255,255,.15);
+.admin-open{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
 color:white;
-padding:10px 14px;
-border-radius:12px;
-cursor:pointer;
+padding:12px 14px;
+border-radius:16px;
 backdrop-filter:blur(10px);
+font-size:18px;
+cursor:pointer;
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-text-align:center;
-max-width:700px;
+max-width:600px;
 }
 
-.hero-content h1{
-font-family:'Cinzel',serif;
-font-size:58px;
-line-height:1;
-color:var(--gold);
+.hero-title{
+font-family:'Cormorant Garamond',serif;
+font-size:62px;
+line-height:.92;
+font-weight:700;
+color:var(--goldSoft);
 margin-bottom:18px;
 }
 
-.hero-content p{
-font-size:17px;
-color:#ddd;
-margin-bottom:30px;
+.hero-desc{
+font-size:16px;
+color:#d8dbe3;
+line-height:1.7;
+max-width:420px;
 }
 
-.cta{
-display:inline-block;
-padding:16px 28px;
-background:var(--gold);
-color:black;
-font-weight:600;
-border-radius:16px;
-text-decoration:none;
-}
+/* SECTION */
 
-.section{
+section{
 padding:70px 20px;
 }
 
 .section-title{
-text-align:center;
-margin-bottom:40px;
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+margin-bottom:30px;
+color:var(--goldSoft);
 }
 
-.section-title small{
-color:var(--gold);
-letter-spacing:3px;
-}
+/* ROOM */
 
-.section-title h2{
-font-family:'Cinzel',serif;
-font-size:38px;
-margin-top:10px;
-}
-
-.rooms{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
-max-width:1200px;
-margin:auto;
+.room-wrap{
+display:flex;
+flex-direction:column;
+gap:26px;
 }
 
 .room-card{
-background:#081020;
-border:1px solid rgba(255,255,255,.08);
-border-radius:26px;
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,.06);
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+.room-slider{
+position:relative;
+height:320px;
 overflow:hidden;
 }
 
-.room-image{
-height:260px;
-overflow:hidden;
-}
-
-.room-image img{
+.room-slider img{
+width:100%;
 height:100%;
 object-fit:cover;
+}
+
+.room-price{
+position:absolute;
+top:18px;
+right:18px;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(12px);
+padding:10px 16px;
+border-radius:100px;
+color:var(--goldSoft);
+font-weight:600;
+font-size:14px;
 }
 
 .room-content{
 padding:22px;
 }
 
-.room-content h3{
-font-size:24px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:30px;
-color:var(--gold);
-font-weight:700;
-margin-bottom:15px;
+.room-name{
+font-family:'Cormorant Garamond',serif;
+font-size:36px;
+margin-bottom:10px;
 }
 
 .facilities{
 display:flex;
 flex-wrap:wrap;
 gap:10px;
-margin-bottom:20px;
+margin:18px 0 25px;
 }
 
 .facilities span{
-background:rgba(255,255,255,.08);
-padding:8px 12px;
-border-radius:12px;
-font-size:13px;
+background:#0f1c30;
+padding:9px 14px;
+border-radius:100px;
+font-size:12px;
+color:#dce2ee;
+}
+
+.booking-box{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.booking-box input{
+background:#0c1729;
+border:none;
+padding:15px;
+border-radius:16px;
+color:white;
+font-size:14px;
 }
 
 .book-btn{
-display:block;
-width:100%;
-text-align:center;
-padding:15px;
-border-radius:14px;
 background:var(--gold);
 color:black;
-text-decoration:none;
-font-weight:600;
+padding:16px;
+border:none;
+border-radius:18px;
+font-weight:700;
+font-size:15px;
+cursor:pointer;
 }
 
-.review-wrap{
-display:grid;
+/* TESTI */
+
+.testi-wrap{
+display:flex;
+flex-direction:column;
 gap:20px;
 }
 
-.review{
-background:#081020;
-padding:25px;
-border-radius:22px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-.review h4{
-margin-bottom:8px;
-}
-
-.location-card{
-background:#081020;
+.testi-card{
+background:rgba(255,255,255,.03);
 padding:24px;
 border-radius:24px;
-max-width:900px;
-margin:auto;
+border:1px solid rgba(255,255,255,.05);
 }
 
-.footer{
-padding:40px 20px 120px;
-text-align:center;
-color:#aaa;
+.testi-head{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:15px;
 }
+
+.testi-head img{
+width:58px;
+height:58px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.testi-head h4{
+font-size:17px;
+}
+
+.testi-card p{
+line-height:1.7;
+color:#d3d8e4;
+}
+
+/* MAP */
+
+.map-box iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:24px;
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 20px 120px;
+text-align:center;
+color:#9ea7ba;
+line-height:1.8;
+}
+
+/* FLOATING WA */
 
 .floating-wa{
 position:fixed;
+right:18px;
 bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:16px 18px;
-border-radius:100px;
-text-decoration:none;
-font-weight:600;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+display:flex;
+align-items:flex-end;
+gap:10px;
 z-index:999;
+text-decoration:none;
 }
+
+.wa-text{
+background:#0f1c30;
+padding:10px 14px;
+border-radius:16px;
+font-size:12px;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.wa-btn{
+width:64px;
+height:64px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+box-shadow:0 0 30px rgba(37,211,102,.5);
+}
+
+/* ADMIN */
 
 .admin-panel{
 position:fixed;
@@ -267,11 +306,11 @@ top:0;
 right:-100%;
 width:100%;
 height:100%;
-background:#050816;
-z-index:9999;
+background:#030712;
+z-index:99999;
 overflow:auto;
-padding:20px;
 transition:.4s;
+padding:22px;
 }
 
 .admin-panel.active{
@@ -285,59 +324,141 @@ align-items:center;
 margin-bottom:25px;
 }
 
-.admin-box{
-background:#081020;
-padding:20px;
-border-radius:20px;
-margin-bottom:20px;
+.admin-title{
+font-size:24px;
+font-family:'Cormorant Garamond',serif;
+color:var(--goldSoft);
 }
 
-.admin-box h3{
-margin-bottom:15px;
-color:var(--gold);
-}
-
-input, textarea{
-width:100%;
-padding:14px;
-margin-bottom:12px;
+.close-admin{
+background:red;
 border:none;
-border-radius:12px;
-background:#111827;
+padding:12px 14px;
+border-radius:14px;
 color:white;
 }
 
-.save-btn{
+.admin-card{
+background:#081120;
+padding:20px;
+border-radius:22px;
+margin-bottom:20px;
+}
+
+.admin-card h3{
+margin-bottom:15px;
+color:var(--goldSoft);
+}
+
+input,textarea,select{
+width:100%;
+padding:15px;
+margin-bottom:14px;
+border:none;
+border-radius:14px;
+background:#0f1c30;
+color:white;
+font-size:14px;
+}
+
+textarea{
+min-height:90px;
+resize:none;
+}
+
+.save-btn,
+.add-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:16px;
+background:var(--gold);
+color:black;
+font-weight:700;
+margin-top:10px;
+}
+
+.room-admin-item{
+padding:15px;
+background:#0f1c30;
+border-radius:16px;
+margin-top:10px;
+}
+
+.room-admin-item h4{
+margin-bottom:10px;
+}
+
+.hide-btn{
+background:#202e45;
+color:white;
+border:none;
+padding:10px 14px;
+border-radius:12px;
+margin-right:8px;
+margin-top:10px;
+}
+
+.delete-btn{
+background:#7c1d1d;
+color:white;
+border:none;
+padding:10px 14px;
+border-radius:12px;
+margin-top:10px;
+}
+
+.login-screen{
+position:fixed;
+inset:0;
+background:#020817;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+padding:20px;
+display:none;
+}
+
+.login-box{
+background:#081120;
+padding:30px;
+border-radius:26px;
+width:100%;
+max-width:380px;
+}
+
+.login-box h2{
+margin-bottom:20px;
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
+color:var(--goldSoft);
+}
+
+.login-btn{
 width:100%;
 padding:16px;
 border:none;
 background:var(--gold);
 color:black;
+border-radius:16px;
 font-weight:700;
-border-radius:14px;
-font-size:16px;
-}
-
-.close-btn{
-background:red;
-padding:10px 14px;
-border:none;
-border-radius:12px;
-color:white;
 }
 
 @media(min-width:768px){
 
-.rooms{
-grid-template-columns:repeat(3,1fr);
+.hero-title{
+font-size:92px;
+max-width:700px;
 }
 
-.hero-content h1{
-font-size:90px;
+.room-wrap{
+display:grid;
+grid-template-columns:repeat(2,1fr);
 }
 
 .admin-panel{
-width:430px;
+width:480px;
 }
 
 }
@@ -347,203 +468,274 @@ width:430px;
 
 <body>
 
+<!-- HERO -->
+
 <section class="hero" id="hero">
 
 <div class="overlay"></div>
 
 <div class="topbar">
 
-<div class="logo">
-<img id="logoImage" src="https://i.imgur.com/7b1Yw0B.png">
-<span id="brandName">ALTON SKYLINE STAY</span>
-</div>
+<img class="logo" id="logo"
+src="https://i.imgur.com/5kQZ1Zm.png">
 
-<button class="admin-btn" onclick="openAdmin()">☰</button>
+<button class="admin-open"
+onclick="openLogin()">
+☰
+</button>
 
 </div>
 
 <div class="hero-content">
 
-<h1 id="heroTitle">ALTON<br>SKYLINE STAY</h1>
+<h1 class="hero-title" id="heroTitle">
+Ada malam<br>
+yang terlalu nyaman<br>
+untuk cepat pulang.
+</h1>
 
-<p id="heroDesc">
-Direct Booking via WhatsApp
+<p class="hero-desc" id="heroDesc">
+Premium Skyline Stay dekat UNDIP Semarang.
+Nyaman untuk healing, recharge, dan staycation.
 </p>
 
-<a id="heroBtn"
-href="https://wa.me/628976660674"
-class="cta">
-Booking via WhatsApp
-</a>
-
 </div>
 
 </section>
 
-<section class="section">
+<!-- ROOM -->
 
-<div class="section-title">
-<small>OUR ROOMS</small>
-<h2>Pilih Kamar Terbaik</h2>
-</div>
+<section>
 
-<div class="rooms" id="roomContainer">
+<h2 class="section-title">
+Pilihan Kamar
+</h2>
 
-<div class="room-card">
-
-<div class="room-image">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200">
-</div>
-
-<div class="room-content">
-
-<h3>Skyline Room</h3>
-
-<div class="price">Rp 250.000</div>
-
-<div class="facilities">
-<span>WiFi</span>
-<span>Netflix</span>
-<span>AC</span>
-<span>City View</span>
-</div>
-
-<a href="https://wa.me/628976660674" class="book-btn">
-Booking Sekarang
-</a>
-
-</div>
-</div>
-
-</div>
+<div class="room-wrap" id="roomWrap"></div>
 
 </section>
 
-<section class="section">
+<!-- TESTIMONIAL -->
 
-<div class="section-title">
-<small>TESTIMONIAL</small>
-<h2>Apa Kata Mereka</h2>
-</div>
+<section>
 
-<div class="review-wrap">
+<h2 class="section-title">
+Apa Kata Mereka?
+</h2>
 
-<div class="review">
-<h4>Sarah</h4>
-<p>Tempatnya nyaman, city view malamnya cantik banget.</p>
-</div>
-
-<div class="review">
-<h4>Andi</h4>
-<p>Cocok buat healing dekat UNDIP dan suasananya tenang.</p>
-</div>
-
-</div>
+<div class="testi-wrap" id="testiWrap"></div>
 
 </section>
 
-<section class="section">
+<!-- MAP -->
 
-<div class="section-title">
-<small>LOCATION</small>
-<h2>Lokasi Kami</h2>
-</div>
+<section>
 
-<div class="location-card">
+<h2 class="section-title">
+Lokasi
+</h2>
 
-<p id="locationText">
-Alton Residence Tembalang Semarang
-</p>
+<div class="map-box">
 
-<br>
-
-<iframe
-id="mapsFrame"
-src="https://www.google.com/maps?q=alton+residence+semarang&output=embed"
-width="100%"
-height="300"
-style="border:0;border-radius:18px;">
+<iframe id="mapsFrame"
+src="https://maps.google.com/maps?q=alton%20residence%20semarang&t=&z=13&ie=UTF8&iwloc=&output=embed">
 </iframe>
 
 </div>
 
 </section>
 
-<footer class="footer">
+<!-- FOOTER -->
 
-<p id="footerText">
+<footer>
+
+<h3 id="footerText">
 Managed by Nusantara Hospitality Management
-</p>
-
-<br>
+</h3>
 
 <p id="socialText">
-Instagram & TikTok : @alton_skylinestay
+Instagram & TikTok @alton_skylinestay
 </p>
 
 </footer>
 
-<a class="floating-wa"
-id="floatingWA"
-href="https://wa.me/628976660674">
-Info Lengkap Klik WhatsApp
+<!-- FLOATING WA -->
+
+<a id="floatingWA"
+class="floating-wa"
+target="_blank">
+
+<div class="wa-text">
+Butuh bantuan?<br>Klik.
+</div>
+
+<div class="wa-btn">
+💬
+</div>
+
 </a>
+
+<!-- LOGIN -->
+
+<div class="login-screen" id="loginScreen">
+
+<div class="login-box">
+
+<h2>
+Admin Login
+</h2>
+
+<input type="password"
+id="adminPassword"
+placeholder="Masukkan Password">
+
+<button class="login-btn"
+onclick="loginAdmin()">
+Masuk Admin
+</button>
+
+</div>
+
+</div>
+
+<!-- ADMIN PANEL -->
 
 <div class="admin-panel" id="adminPanel">
 
 <div class="admin-header">
 
-<h2>Admin Panel</h2>
+h2 class="admin-title">
+Admin Panel
+</h2>
 
-<button class="close-btn" onclick="closeAdmin()">X</button>
-
-</div>
-
-<div class="admin-box">
-
-<h3>Login Admin</h3>
-
-<input type="password" id="adminPassword" placeholder="Masukkan Password">
-
-<button class="save-btn" onclick="loginAdmin()">
-Login
+<button class="close-admin"
+onclick="closeAdmin()">
+X
 </button>
 
 </div>
 
-<div id="adminContent" style="display:none;">
+<!-- HERO -->
 
-<div class="admin-box">
+<div class="admin-card">
 
 <h3>Hero Section</h3>
 
-<input id="editHeroTitle" placeholder="Judul">
-<textarea id="editHeroDesc"></textarea>
-<input id="editHeroBg" placeholder="Link Background">
-<input id="editWA" placeholder="Nomor WhatsApp">
+<input id="adminHeroTitle"
+placeholder="Judul Hero">
+
+<textarea id="adminHeroDesc"
+placeholder="Deskripsi"></textarea>
+
+<input id="adminHeroBg"
+placeholder="URL Background Hero">
+
+<input id="adminLogo"
+placeholder="URL Logo">
+
+<button class="save-btn"
+onclick="saveHero()">
+Simpan Hero
+</button>
 
 </div>
 
-<div class="admin-box">
+<!-- WA -->
 
-<h3>Footer</h3>
+<div class="admin-card">
 
-<input id="editFooter">
-<input id="editSocial">
+<h3>WhatsApp</h3>
+
+<input id="adminWA"
+placeholder="Nomor WhatsApp">
+
+<button class="save-btn"
+onclick="saveWA()">
+Simpan WA
+</button>
 
 </div>
 
-<div class="admin-box">
+<!-- ROOM -->
+
+<div class="admin-card">
+
+<h3>Tambah Kamar</h3>
+
+<input id="roomName"
+placeholder="Nama Kamar">
+
+<input id="roomPrice"
+placeholder="Harga">
+
+<input id="roomImage"
+placeholder="URL Foto">
+
+<input id="roomFacilities"
+placeholder="Fasilitas pisahkan koma">
+
+<button class="add-btn"
+onclick="addRoom()">
+Tambah Kamar
+</button>
+
+<div id="adminRoomList"></div>
+
+</div>
+
+<!-- TESTI -->
+
+<div class="admin-card">
+
+<h3>Tambah Testimoni</h3>
+
+<input id="testiName"
+placeholder="Nama">
+
+<input id="testiPhoto"
+placeholder="URL Foto">
+
+<textarea id="testiText"
+placeholder="Isi Review"></textarea>
+
+<button class="add-btn"
+onclick="addTesti()">
+Tambah Review
+</button>
+
+</div>
+
+<!-- LOCATION -->
+
+<div class="admin-card">
 
 <h3>Lokasi</h3>
 
-<input id="editLocation">
-<input id="editMaps">
+<input id="adminMaps"
+placeholder="URL Embed Maps">
+
+<button class="save-btn"
+onclick="saveMaps()">
+Simpan Maps
+</button>
 
 </div>
 
-<button class="save-btn" onclick="saveChanges()">
-Simpan Perubahan
+<!-- FOOTER -->
+
+<div class="admin-card">
+
+<h3>Footer</h3>
+
+<input id="adminFooter"
+placeholder="Managed By">
+
+<input id="adminSocial"
+placeholder="Social Media">
+
+<button class="save-btn"
+onclick="saveFooter()">
+Simpan Footer
 </button>
 
 </div>
@@ -552,101 +744,479 @@ Simpan Perubahan
 
 <script>
 
-const PASSWORD = "admin123"
+const PASSWORD = "alton2026";
 
-function openAdmin(){
-document.getElementById('adminPanel').classList.add('active')
+let data = JSON.parse(localStorage.getItem("altonData")) || {
+
+hero:{
+title:`Ada malam<br>yang terlalu nyaman<br>untuk cepat pulang.`,
+desc:`Premium Skyline Stay dekat UNDIP Semarang.`,
+bg:`https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1400`,
+logo:`https://i.imgur.com/5kQZ1Zm.png`
+},
+
+wa:"628976660674",
+
+footer:{
+text:"Managed by Nusantara Hospitality Management",
+social:"Instagram & TikTok @alton_skylinestay"
+},
+
+maps:"https://maps.google.com/maps?q=alton%20residence%20semarang&t=&z=13&ie=UTF8&iwloc=&output=embed",
+
+rooms:[
+
+{
+active:true,
+name:"Skyline Room",
+price:"Rp 250.000",
+image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200",
+facilities:["WiFi","Netflix","AC","City View"]
+},
+
+{
+active:true,
+name:"Couple Stay",
+price:"Rp 320.000",
+image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200",
+facilities:["Queen Bed","Kitchen","Skyline"]
 }
 
-function closeAdmin(){
-document.getElementById('adminPanel').classList.remove('active')
+],
+
+testimonials:[
+
+{
+name:"Sarah",
+photo:"https://randomuser.me/api/portraits/women/44.jpg",
+text:"Tempatnya nyaman banget dan vibes malamnya aesthetic."
+}
+
+]
+
+};
+
+function saveStorage(){
+
+localStorage.setItem(
+"altonData",
+JSON.stringify(data)
+);
+
+}
+
+function renderWebsite(){
+
+document.getElementById("heroTitle").innerHTML =
+data.hero.title;
+
+document.getElementById("heroDesc").innerText =
+data.hero.desc;
+
+document.getElementById("hero").style.background =
+`url('${data.hero.bg}') center/cover`;
+
+document.getElementById("logo").src =
+data.hero.logo;
+
+document.getElementById("footerText").innerText =
+data.footer.text;
+
+document.getElementById("socialText").innerText =
+data.footer.social;
+
+document.getElementById("mapsFrame").src =
+data.maps;
+
+document.getElementById("floatingWA").href =
+`https://wa.me/${data.wa}`;
+
+renderRooms();
+
+renderTesti();
+
+}
+
+function renderRooms(){
+
+const wrap =
+document.getElementById("roomWrap");
+
+wrap.innerHTML = "";
+
+data.rooms.forEach((room,index)=>{
+
+if(!room.active)return;
+
+wrap.innerHTML += `
+
+<div class="room-card">
+
+<div class="room-slider">
+
+<img src="${room.image}">
+
+<div class="room-price">
+${room.price}
+</div>
+
+</div>
+
+<div class="room-content">
+
+<h3 class="room-name">
+${room.name}
+</h3>
+
+<div class="facilities">
+
+${room.facilities.map(f=>`
+<span>${f}</span>
+`).join("")}
+
+</div>
+
+<div class="booking-box">
+
+<input type="date"
+id="date-${index}">
+
+<input type="number"
+id="night-${index}"
+placeholder="Lama Menginap">
+
+<button class="book-btn"
+onclick="bookingRoom(${index})">
+Booking Sekarang
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+renderAdminRooms();
+
+}
+
+function bookingRoom(index){
+
+const room = data.rooms[index];
+
+const date =
+document.getElementById(`date-${index}`).value;
+
+const night =
+document.getElementById(`night-${index}`).value;
+
+const text =
+`Halo Alton Skyline Stay
+
+Saya ingin booking:
+
+Nama Kamar: ${room.name}
+Tanggal Booking: ${date}
+Lama Menginap: ${night} malam
+
+Mohon info ketersediaannya.`;
+
+window.open(
+`https://wa.me/${data.wa}?text=${encodeURIComponent(text)}`
+);
+
+}
+
+function renderTesti(){
+
+const wrap =
+document.getElementById("testiWrap");
+
+wrap.innerHTML = "";
+
+data.testimonials.forEach((item,index)=>{
+
+wrap.innerHTML += `
+
+<div class="testi-card">
+
+<div class="testi-head">
+
+<img src="${item.photo}">
+
+<div>
+<h4>${item.name}</h4>
+</div>
+
+</div>
+
+<p>${item.text}</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+function openLogin(){
+
+document.getElementById("loginScreen")
+.style.display = "flex";
+
 }
 
 function loginAdmin(){
 
-const pass = document.getElementById('adminPassword').value
+const pass =
+document.getElementById("adminPassword").value;
 
 if(pass === PASSWORD){
 
-document.getElementById('adminContent').style.display='block'
+document.getElementById("loginScreen")
+.style.display = "none";
 
-loadAdminData()
+document.getElementById("adminPanel")
+.classList.add("active");
+
+loadAdmin();
 
 }else{
-alert('Password salah')
-}
+
+alert("Password Salah");
 
 }
 
-function loadAdminData(){
+}
 
-document.getElementById('editHeroTitle').value =
-document.getElementById('heroTitle').innerHTML.replace('<br>',' ')
+function closeAdmin(){
 
-document.getElementById('editHeroDesc').value =
-document.getElementById('heroDesc').innerText
-
-document.getElementById('editFooter').value =
-document.getElementById('footerText').innerText
-
-document.getElementById('editSocial').value =
-document.getElementById('socialText').innerText
-
-document.getElementById('editLocation').value =
-document.getElementById('locationText').innerText
+document.getElementById("adminPanel")
+.classList.remove("active");
 
 }
 
-function saveChanges(){
+function loadAdmin(){
 
-document.getElementById('heroTitle').innerHTML =
-document.getElementById('editHeroTitle').value
+document.getElementById("adminHeroTitle").value =
+data.hero.title.replace(/<br>/g,' ');
 
-document.getElementById('heroDesc').innerText =
-document.getElementById('editHeroDesc').value
+document.getElementById("adminHeroDesc").value =
+data.hero.desc;
 
-document.getElementById('footerText').innerText =
-document.getElementById('editFooter').value
+document.getElementById("adminHeroBg").value =
+data.hero.bg;
 
-document.getElementById('socialText').innerText =
-document.getElementById('editSocial').value
+document.getElementById("adminLogo").value =
+data.hero.logo;
 
-document.getElementById('locationText').innerText =
-document.getElementById('editLocation').value
+document.getElementById("adminWA").value =
+data.wa;
 
-const bg =
-document.getElementById('editHeroBg').value
+document.getElementById("adminMaps").value =
+data.maps;
 
-if(bg){
-document.getElementById('hero').style.background =
-`url('${bg}') center/cover`
-}
+document.getElementById("adminFooter").value =
+data.footer.text;
 
-const wa =
-document.getElementById('editWA').value
-
-if(wa){
-
-document.getElementById('heroBtn').href =
-`https://wa.me/${wa}`
-
-document.getElementById('floatingWA').href =
-`https://wa.me/${wa}`
+document.getElementById("adminSocial").value =
+data.footer.social;
 
 }
 
-const maps =
-document.getElementById('editMaps').value
+function saveHero(){
 
-if(maps){
+data.hero.title =
+document.getElementById("adminHeroTitle").value;
 
-document.getElementById('mapsFrame').src = maps
+data.hero.desc =
+document.getElementById("adminHeroDesc").value;
+
+data.hero.bg =
+document.getElementById("adminHeroBg").value;
+
+data.hero.logo =
+document.getElementById("adminLogo").value;
+
+saveStorage();
+renderWebsite();
+
+alert("Hero berhasil disimpan");
 
 }
 
-alert('Perubahan berhasil disimpan')
+function saveWA(){
+
+data.wa =
+document.getElementById("adminWA").value;
+
+saveStorage();
+renderWebsite();
+
+alert("WA berhasil disimpan");
 
 }
+
+function addRoom(){
+
+if(data.rooms.length >= 20){
+
+alert("Maksimal 20 kamar");
+
+return;
+
+}
+
+const room = {
+
+active:true,
+
+name:
+document.getElementById("roomName").value,
+
+price:
+document.getElementById("roomPrice").value,
+
+image:
+document.getElementById("roomImage").value,
+
+facilities:
+document.getElementById("roomFacilities")
+.value
+.split(",")
+
+};
+
+data.rooms.push(room);
+
+saveStorage();
+
+renderWebsite();
+
+alert("Kamar berhasil ditambahkan");
+
+}
+
+function renderAdminRooms(){
+
+const list =
+document.getElementById("adminRoomList");
+
+list.innerHTML = "";
+
+data.rooms.forEach((room,index)=>{
+
+list.innerHTML += `
+
+<div class="room-admin-item">
+
+<h4>${room.name}</h4>
+
+<p>${room.price}</p>
+
+<button class="hide-btn"
+onclick="toggleRoom(${index})">
+
+${room.active ? "Hide" : "Show"}
+
+</button>
+
+<button class="delete-btn"
+onclick="deleteRoom(${index})">
+
+Delete
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function toggleRoom(index){
+
+data.rooms[index].active =
+!data.rooms[index].active;
+
+saveStorage();
+
+renderWebsite();
+
+}
+
+function deleteRoom(index){
+
+data.rooms.splice(index,1);
+
+saveStorage();
+
+renderWebsite();
+
+}
+
+function addTesti(){
+
+const testi = {
+
+name:
+document.getElementById("testiName").value,
+
+photo:
+document.getElementById("testiPhoto").value,
+
+text:
+document.getElementById("testiText").value
+
+};
+
+data.testimonials.push(testi);
+
+saveStorage();
+
+renderWebsite();
+
+alert("Review berhasil ditambahkan");
+
+}
+
+function saveMaps(){
+
+data.maps =
+document.getElementById("adminMaps").value;
+
+saveStorage();
+
+renderWebsite();
+
+alert("Maps berhasil disimpan");
+
+}
+
+function saveFooter(){
+
+data.footer.text =
+document.getElementById("adminFooter").value;
+
+data.footer.social =
+document.getElementById("adminSocial").value;
+
+saveStorage();
+
+renderWebsite();
+
+alert("Footer berhasil disimpan");
+
+}
+
+renderWebsite();
 
 </script>
 
