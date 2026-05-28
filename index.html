@@ -1,14 +1,24 @@
+index.html
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Alton Skyline Stay</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--navy:#050816;
+--gold:#d4af37;
+--white:#ffffff;
+--soft:#bfc3cf;
+}
 
 *{
 margin:0;
@@ -19,182 +29,223 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#050816;
+background:#030712;
 color:white;
 overflow-x:hidden;
 }
 
-/* HERO */
+img{
+width:100%;
+display:block;
+}
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(5,8,22,.75),rgba(5,8,22,.9)),
-url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1400');
-background-size:cover;
-background-position:center;
+position:relative;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200') center/cover;
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
+justify-content:center;
 padding:20px;
 }
 
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,
+rgba(1,5,18,.85),
+rgba(1,5,18,.65),
+rgba(1,5,18,.95));
+}
+
+.topbar{
+position:absolute;
+top:0;
+left:0;
+right:0;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:5;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:42px;
+height:42px;
+border-radius:10px;
+}
+
+.logo span{
+font-family:'Cinzel',serif;
+font-size:18px;
+color:var(--gold);
+font-weight:700;
+}
+
+.admin-btn{
+background:rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.15);
+color:white;
+padding:10px 14px;
+border-radius:12px;
+cursor:pointer;
+backdrop-filter:blur(10px);
+}
+
 .hero-content{
-max-width:800px;
+position:relative;
+z-index:2;
+text-align:center;
+max-width:700px;
 }
 
-.hero h1{
+.hero-content h1{
+font-family:'Cinzel',serif;
 font-size:58px;
-color:#FFD700;
-margin-bottom:20px;
+line-height:1;
+color:var(--gold);
+margin-bottom:18px;
 }
 
-.hero p{
-font-size:20px;
+.hero-content p{
+font-size:17px;
 color:#ddd;
-line-height:1.8;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
-.btn{
+.cta{
 display:inline-block;
-padding:15px 30px;
-border-radius:14px;
-text-decoration:none;
+padding:16px 28px;
+background:var(--gold);
+color:black;
 font-weight:600;
-margin:10px;
-transition:.3s;
+border-radius:16px;
+text-decoration:none;
 }
-
-.btn-primary{
-background:#FFD700;
-color:#000;
-}
-
-.btn-secondary{
-border:2px solid #FFD700;
-color:#FFD700;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-/* SECTION */
 
 .section{
-padding:90px 20px;
-max-width:1200px;
-margin:auto;
+padding:70px 20px;
 }
 
 .section-title{
 text-align:center;
-font-size:42px;
-margin-bottom:60px;
-color:#FFD700;
+margin-bottom:40px;
 }
 
-/* FEATURES */
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+.section-title small{
+color:var(--gold);
+letter-spacing:3px;
 }
 
-.feature-box{
-background:#0b1024;
-padding:35px;
-border-radius:20px;
-text-align:center;
+.section-title h2{
+font-family:'Cinzel',serif;
+font-size:38px;
+margin-top:10px;
 }
-
-.feature-box h3{
-margin-bottom:15px;
-font-size:24px;
-}
-
-/* ROOMS */
 
 .rooms{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+grid-template-columns:1fr;
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .room-card{
-background:#0b1024;
-border-radius:22px;
+background:#081020;
+border:1px solid rgba(255,255,255,.08);
+border-radius:26px;
 overflow:hidden;
 }
 
-.room-card img{
-width:100%;
-height:220px;
+.room-image{
+height:260px;
+overflow:hidden;
+}
+
+.room-image img{
+height:100%;
 object-fit:cover;
 }
 
 .room-content{
-padding:25px;
+padding:22px;
 }
 
 .room-content h3{
-font-size:28px;
-margin-bottom:10px;
+font-size:24px;
+margin-bottom:8px;
 }
 
 .price{
-color:#FFD700;
-font-size:24px;
+font-size:30px;
+color:var(--gold);
 font-weight:700;
 margin-bottom:15px;
 }
 
-/* GALLERY */
+.facilities{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
 
-.gallery{
+.facilities span{
+background:rgba(255,255,255,.08);
+padding:8px 12px;
+border-radius:12px;
+font-size:13px;
+}
+
+.book-btn{
+display:block;
+width:100%;
+text-align:center;
+padding:15px;
+border-radius:14px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+font-weight:600;
+}
+
+.review-wrap{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:18px;
+.review{
+background:#081020;
+padding:25px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.08);
 }
 
-/* TESTIMONIAL */
-
-.testimonials{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+.review h4{
+margin-bottom:8px;
 }
 
-.testi{
-background:#0b1024;
-padding:30px;
-border-radius:20px;
+.location-card{
+background:#081020;
+padding:24px;
+border-radius:24px;
+max-width:900px;
+margin:auto;
 }
 
-/* FOOTER */
-
-footer{
-padding:60px 20px;
+.footer{
+padding:40px 20px 120px;
 text-align:center;
-border-top:1px solid rgba(255,255,255,.1);
+color:#aaa;
 }
-
-footer p{
-margin:10px 0;
-color:#bbb;
-}
-
-/* FLOATING WA */
 
 .floating-wa{
 position:fixed;
@@ -202,28 +253,91 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:16px 22px;
-border-radius:50px;
+padding:16px 18px;
+border-radius:100px;
 text-decoration:none;
 font-weight:600;
-box-shadow:0 8px 25px rgba(0,0,0,.4);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 z-index:999;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:40px;
+.admin-panel{
+position:fixed;
+top:0;
+right:-100%;
+width:100%;
+height:100%;
+background:#050816;
+z-index:9999;
+overflow:auto;
+padding:20px;
+transition:.4s;
 }
 
-.hero p{
+.admin-panel.active{
+right:0;
+}
+
+.admin-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.admin-box{
+background:#081020;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.admin-box h3{
+margin-bottom:15px;
+color:var(--gold);
+}
+
+input, textarea{
+width:100%;
+padding:14px;
+margin-bottom:12px;
+border:none;
+border-radius:12px;
+background:#111827;
+color:white;
+}
+
+.save-btn{
+width:100%;
+padding:16px;
+border:none;
+background:var(--gold);
+color:black;
+font-weight:700;
+border-radius:14px;
 font-size:16px;
 }
 
-.section-title{
-font-size:32px;
+.close-btn{
+background:red;
+padding:10px 14px;
+border:none;
+border-radius:12px;
+color:white;
+}
+
+@media(min-width:768px){
+
+.rooms{
+grid-template-columns:repeat(3,1fr);
+}
+
+.hero-content h1{
+font-size:90px;
+}
+
+.admin-panel{
+width:430px;
 }
 
 }
@@ -233,236 +347,308 @@ font-size:32px;
 
 <body>
 
-<!-- HERO -->
+<section class="hero" id="hero">
 
-<section class="hero">
+<div class="overlay"></div>
+
+<div class="topbar">
+
+<div class="logo">
+<img id="logoImage" src="https://i.imgur.com/7b1Yw0B.png">
+<span id="brandName">ALTON SKYLINE STAY</span>
+</div>
+
+<button class="admin-btn" onclick="openAdmin()">☰</button>
+
+</div>
 
 <div class="hero-content">
 
-<h1>ALTON SKYLINE STAY</h1>
+<h1 id="heroTitle">ALTON<br>SKYLINE STAY</h1>
 
-<p>
-Premium skyline stay at Alton Residence Tembalang Semarang.
-Nyaman untuk staycation, healing, dan recharge suasana.
+<p id="heroDesc">
+Direct Booking via WhatsApp
 </p>
 
-<a href="https://wa.me/628976660674"
-class="btn btn-primary"
-target="_blank">
-Booking WhatsApp
-</a>
-
-<a href="https://maps.app.goo.gl/v3fLRSGrjfkvsKAw9?g_st=ac"
-class="btn btn-secondary"
-target="_blank">
-Open Maps
+<a id="heroBtn"
+href="https://wa.me/628976660674"
+class="cta">
+Booking via WhatsApp
 </a>
 
 </div>
 
 </section>
 
-<!-- FEATURES -->
-
 <section class="section">
 
-<h2 class="section-title">
-Why Stay Here?
-</h2>
-
-<div class="features">
-
-<div class="feature-box">
-<h3>🌃 Skyline View</h3>
-<p>
-Nikmati ambience malam Semarang dari ketinggian.
-</p>
+<div class="section-title">
+<small>OUR ROOMS</small>
+<h2>Pilih Kamar Terbaik</h2>
 </div>
 
-<div class="feature-box">
-<h3>🛏 Premium Comfort</h3>
-<p>
-Clean room, aesthetic interior, dan suasana tenang.
-</p>
-</div>
-
-<div class="feature-box">
-<h3>📍 Near UNDIP</h3>
-<p>
-Cocok untuk mahasiswa, orang tua, dan staycation.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- ROOMS -->
-
-<section class="section">
-
-<h2 class="section-title">
-Our Rooms
-</h2>
-
-<div class="rooms">
+<div class="rooms" id="roomContainer">
 
 <div class="room-card">
 
+<div class="room-image">
 <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200">
+</div>
 
 <div class="room-content">
 
 <h3>Skyline Room</h3>
 
-<div class="price">
-Rp 250.000 / malam
+<div class="price">Rp 250.000</div>
+
+<div class="facilities">
+<span>WiFi</span>
+<span>Netflix</span>
+<span>AC</span>
+<span>City View</span>
 </div>
 
-<p>
-WiFi • AC • Smart TV • Netflix • City View
-</p>
-
-<br>
-
-<a href="https://wa.me/628976660674"
-class="btn btn-primary"
-target="_blank">
-Booking Now
+<a href="https://wa.me/628976660674" class="book-btn">
+Booking Sekarang
 </a>
 
 </div>
+</div>
 
 </div>
 
-<div class="room-card">
+</section>
 
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200">
+<section class="section">
 
-<div class="room-content">
-
-<h3>Couple Stay Room</h3>
-
-<div class="price">
-Rp 320.000 / malam
+<div class="section-title">
+<small>TESTIMONIAL</small>
+<h2>Apa Kata Mereka</h2>
 </div>
 
-<p>
-Queen Bed • Kitchen Set • Skyline View
+<div class="review-wrap">
+
+<div class="review">
+<h4>Sarah</h4>
+<p>Tempatnya nyaman, city view malamnya cantik banget.</p>
+</div>
+
+<div class="review">
+<h4>Andi</h4>
+<p>Cocok buat healing dekat UNDIP dan suasananya tenang.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<small>LOCATION</small>
+<h2>Lokasi Kami</h2>
+</div>
+
+<div class="location-card">
+
+<p id="locationText">
+Alton Residence Tembalang Semarang
 </p>
 
 <br>
-
-<a href="https://wa.me/628976660674"
-class="btn btn-primary"
-target="_blank">
-Booking Now
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section class="section">
-
-<h2 class="section-title">
-Gallery
-</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200">
-
-</div>
-
-</section>
-
-<!-- TESTIMONIAL -->
-
-<section class="section">
-
-<h2 class="section-title">
-Guest Experience
-</h2>
-
-<div class="testimonials">
-
-<div class="testi">
-<h3>Sarah</h3>
-<p>
-“Tempatnya nyaman banget, city view malamnya cantik dan vibes-nya premium.”
-</p>
-</div>
-
-<div class="testi">
-<h3>Andi</h3>
-<p>
-“Cocok buat healing dan staycation dekat UNDIP. Bersih dan tenang.”
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- MAPS -->
-
-<section class="section">
-
-<h2 class="section-title">
-Location
-</h2>
 
 <iframe
-src="https://www.google.com/maps?q=Alton+Residence+Semarang&output=embed"
+id="mapsFrame"
+src="https://www.google.com/maps?q=alton+residence+semarang&output=embed"
 width="100%"
-height="400"
-style="border:0;border-radius:20px;">
+height="300"
+style="border:0;border-radius:18px;">
 </iframe>
+
+</div>
 
 </section>
 
-<!-- FOOTER -->
+<footer class="footer">
 
-<footer>
-
-<h2 style="color:#FFD700;">
-Alton Skyline Stay
-</h2>
-
-<p>
+<p id="footerText">
 Managed by Nusantara Hospitality Management
 </p>
 
-<p>
-Instagram & TikTok: @alton_skylinestay
-</p>
+<br>
 
-<p>
-at Alton Residence Tembalang Semarang
+<p id="socialText">
+Instagram & TikTok : @alton_skylinestay
 </p>
 
 </footer>
 
-<!-- FLOATING WA -->
-
 <a class="floating-wa"
-href="https://wa.me/628976660674"
-target="_blank">
-WhatsApp
+id="floatingWA"
+href="https://wa.me/628976660674">
+Info Lengkap Klik WhatsApp
 </a>
+
+<div class="admin-panel" id="adminPanel">
+
+<div class="admin-header">
+
+<h2>Admin Panel</h2>
+
+<button class="close-btn" onclick="closeAdmin()">X</button>
+
+</div>
+
+<div class="admin-box">
+
+<h3>Login Admin</h3>
+
+<input type="password" id="adminPassword" placeholder="Masukkan Password">
+
+<button class="save-btn" onclick="loginAdmin()">
+Login
+</button>
+
+</div>
+
+<div id="adminContent" style="display:none;">
+
+<div class="admin-box">
+
+<h3>Hero Section</h3>
+
+<input id="editHeroTitle" placeholder="Judul">
+<textarea id="editHeroDesc"></textarea>
+<input id="editHeroBg" placeholder="Link Background">
+<input id="editWA" placeholder="Nomor WhatsApp">
+
+</div>
+
+<div class="admin-box">
+
+<h3>Footer</h3>
+
+<input id="editFooter">
+<input id="editSocial">
+
+</div>
+
+<div class="admin-box">
+
+<h3>Lokasi</h3>
+
+<input id="editLocation">
+<input id="editMaps">
+
+</div>
+
+<button class="save-btn" onclick="saveChanges()">
+Simpan Perubahan
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const PASSWORD = "admin123"
+
+function openAdmin(){
+document.getElementById('adminPanel').classList.add('active')
+}
+
+function closeAdmin(){
+document.getElementById('adminPanel').classList.remove('active')
+}
+
+function loginAdmin(){
+
+const pass = document.getElementById('adminPassword').value
+
+if(pass === PASSWORD){
+
+document.getElementById('adminContent').style.display='block'
+
+loadAdminData()
+
+}else{
+alert('Password salah')
+}
+
+}
+
+function loadAdminData(){
+
+document.getElementById('editHeroTitle').value =
+document.getElementById('heroTitle').innerHTML.replace('<br>',' ')
+
+document.getElementById('editHeroDesc').value =
+document.getElementById('heroDesc').innerText
+
+document.getElementById('editFooter').value =
+document.getElementById('footerText').innerText
+
+document.getElementById('editSocial').value =
+document.getElementById('socialText').innerText
+
+document.getElementById('editLocation').value =
+document.getElementById('locationText').innerText
+
+}
+
+function saveChanges(){
+
+document.getElementById('heroTitle').innerHTML =
+document.getElementById('editHeroTitle').value
+
+document.getElementById('heroDesc').innerText =
+document.getElementById('editHeroDesc').value
+
+document.getElementById('footerText').innerText =
+document.getElementById('editFooter').value
+
+document.getElementById('socialText').innerText =
+document.getElementById('editSocial').value
+
+document.getElementById('locationText').innerText =
+document.getElementById('editLocation').value
+
+const bg =
+document.getElementById('editHeroBg').value
+
+if(bg){
+document.getElementById('hero').style.background =
+`url('${bg}') center/cover`
+}
+
+const wa =
+document.getElementById('editWA').value
+
+if(wa){
+
+document.getElementById('heroBtn').href =
+`https://wa.me/${wa}`
+
+document.getElementById('floatingWA').href =
+`https://wa.me/${wa}`
+
+}
+
+const maps =
+document.getElementById('editMaps').value
+
+if(maps){
+
+document.getElementById('mapsFrame').src = maps
+
+}
+
+alert('Perubahan berhasil disimpan')
+
+}
+
+</script>
 
 </body>
 </html>
