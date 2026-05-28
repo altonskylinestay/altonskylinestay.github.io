@@ -1,71 +1,314 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Alton Skyline Stay</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
 
-<title>Alton Skyline Stay</title>
-
-<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
 body{
-margin:0;
-background:#050816;
-font-family:Arial,sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
+background:#07111f;
 color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(7,17,31,0.75),rgba(7,17,31,0.9)),
+url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 padding:20px;
 }
 
-.container{
-max-width:500px;
+.hero-content{
+max-width:800px;
 }
 
-h1{
-font-size:42px;
-color:gold;
+.hero h1{
+font-size:48px;
+font-weight:700;
+margin-bottom:15px;
+color:#D4AF37;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:30px;
+color:#ddd;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#D4AF37;
+color:#07111f;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+background:transparent;
+border:1px solid #D4AF37;
+color:#D4AF37;
+}
+
+/* SECTION */
+
+.section{
+padding:70px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+font-size:34px;
+margin-bottom:40px;
+text-align:center;
+color:#D4AF37;
+}
+
+/* ROOM */
+
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.room-card{
+background:#0d1b2d;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.room-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.room-content{
+padding:20px;
+}
+
+.room-content h3{
+font-size:24px;
 margin-bottom:10px;
 }
 
-p{
-font-size:18px;
-color:#d6d6d6;
-line-height:1.7;
-margin-bottom:30px;
+.price{
+color:#D4AF37;
+font-size:22px;
+font-weight:700;
+margin-bottom:15px;
 }
 
-.button{
-display:inline-block;
-padding:16px 32px;
-background:gold;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:14px;
+.facilities{
+font-size:14px;
+color:#bbb;
+line-height:1.8;
+margin-bottom:20px;
 }
 
-</style>
-</head>
+/* TESTIMONI */
 
-<body>
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
 
-<div class="container">
+.testimonial-card{
+background:#0d1b2d;
+padding:25px;
+border-radius:20px;
+}
 
-<h1>ALTON SKYLINE STAY</h1>
+.testimonial-card img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
 
-<p>
-Premium Staycation Near UNDIP Semarang
-</p>
+/* MAPS */
 
-<a class="button" href="https://wa.me/628976660674">
-BOOKING VIA WHATSAPP
+.maps iframe{
+width:100%;
+height:400px;
+border:none;
+border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#050b14;
+padding:40px 20px;
+text-align:center;
+margin-top:50px;
+}
+
+footer p{
+margin-bottom:10px;
+color:#aaa;
+}
+
+/* FLOATING WA */
+
+.floating-wa{
+position:fixed;
+bottom:20px;
+right:20px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+z-index:999;
+animation:float 2s infinite;
+}
+
+.floating-wa img{
+width:34px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0);}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+}
+
+</style></head><body><!-- HERO --><section class="hero"><div class="hero-content"><h1>Alton Skyline Stay</h1><p>
+Premium skyline stay at Alton Residence Tembalang Semarang.
+Nyaman untuk staycation, healing, dan recharge suasana.
+</p><div class="hero-buttons"><a
+href="https://wa.me/628976660674"
+class="btn btn-primary"
+target="_blank"
+
+«»
+
+Booking WhatsApp
 </a>
 
-</div>
+<a
+href="https://maps.app.goo.gl/v3fLRSGrjfkvsKAw9?g_st=ac"
+class="btn btn-secondary"
+target="_blank"
 
-</body>
+«»
+
+Open Maps
+</a>
+
+</div></div></section><!-- ROOM --><section class="section"><h2 class="section-title">
+Our Rooms
+</h2><div class="rooms"><div class="room-card"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200"><div class="room-content"><h3>Skyline Room</h3><div class="price">
+Rp 250.000 / malam
+</div><div class="facilities">
+WiFi • AC • Smart TV • City View • Netflix
+</div><a
+href="https://wa.me/628976660674"
+class="btn btn-primary"
+target="_blank"
+
+«»
+
+Booking Now
+</a>
+
+</div></div><div class="room-card"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200"><div class="room-content"><h3>Couple Stay Room</h3><div class="price">
+Rp 320.000 / malam
+</div><div class="facilities">
+Queen Bed • WiFi • Skyline View • Kitchen Set
+</div><a
+href="https://wa.me/628976660674"
+class="btn btn-primary"
+target="_blank"
+
+«»
+
+Booking Now
+</a>
+
+</div></div></div></section><!-- TESTIMONIAL --><section class="section"><h2 class="section-title">
+Guest Experience
+</h2><div class="testimonials"><div class="testimonial-card"><img src="https://randomuser.me/api/portraits/women/44.jpg"><h3>Sarah</h3><p>
+“Tempatnya nyaman banget, city view malamnya cantik dan vibes-nya premium.”
+</p></div><div class="testimonial-card"><img src="https://randomuser.me/api/portraits/men/32.jpg"><h3>Andi</h3><p>
+“Cocok buat healing dan staycation dekat UNDIP. Bersih dan tenang.”
+</p></div></div></section><!-- MAPS --><section class="section maps"><h2 class="section-title">
+Location
+</h2><iframe
+src="https://www.google.com/maps?q=Alton+Residence+Tembalang+Semarang&output=embed">
+</iframe></section><!-- FOOTER --><footer><p>
+Managed by Nusantara Hospitality Management
+</p><p>
+Instagram & TikTok:
+@alton_skylinestay
+</p><p>
+at Alton Residence Tembalang Semarang
+</p></footer><!-- FLOATING WA --><a
+class="floating-wa"
+href="https://wa.me/628976660674"
+target="_blank"
+
+«»
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a></body>
 </html>
